@@ -54,6 +54,41 @@
 	"folders": [],
 	"requests": [
 		{
+			"id": "34c26a36-1801-4e96-8196-4186a2dd37cb",
+			"name": "get token",
+			"url": "http://104.40.150.146/token",
+			"description": "",
+			"data": [],
+			"dataOptions": {
+				"raw": {
+					"language": "text"
+				}
+			},
+			"dataMode": "raw",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aa05f9bd-467c-4733-b0a6-533c94be8c3e",
+						"exec": [
+							"var jsonResp = pm.response.json();\r",
+							"postman.setGlobalVariable(\"token\", jsonResp[\"access_token\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "grant_type=password&username=TestUser565&password=54321",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
 			"id": "06a08c25-40a3-4648-b098-1a1b2219666d",
 			"name": "Get all games",
 			"url": "http://104.40.150.146/api/games",
@@ -166,41 +201,7 @@
 			"headers": "",
 			"pathVariables": {}
 		},
-		{
-			"id": "34c26a36-1801-4e96-8196-4186a2dd37cb",
-			"name": "get token",
-			"url": "http://104.40.150.146/token",
-			"description": "",
-			"data": [],
-			"dataOptions": {
-				"raw": {
-					"language": "text"
-				}
-			},
-			"dataMode": "raw",
-			"headerData": [],
-			"method": "POST",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "aa05f9bd-467c-4733-b0a6-533c94be8c3e",
-						"exec": [
-							"var jsonResp = pm.response.json();\r",
-							"postman.setGlobalVariable(\"token\", jsonResp[\"access_token\"]);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"folder": null,
-			"rawModeData": "grant_type=password&username=TestUser565&password=54321",
-			"headers": "",
-			"pathVariables": {}
-		},
+		
 		{
 			"id": "5a506a3e-0718-424e-b553-2289635aef21",
 			"name": "Delete game  by ID",
